@@ -16,6 +16,8 @@
 
 </head>
 <body>
+
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Tasky</a>
@@ -23,13 +25,37 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button class="btn btn-outline-success" type="submit">
-              <i class="fa-light fa-plus mr-4"></i> Add New Item 
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+            </ul>
+            <button class="btn btn-outline-success d-flex align-items-center gap-2" type="submit">
+              <i class="fa-light fa-plus mr-4"></i>Add new item
             </button>
-          </div>
         </div>
-      </nav>
+    </nav>
 
+    <div class="container">
+      <!-- Search for task section -->
+      <section class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="input-group flex-nowrap shadow-md rounded">
+                <input type="search" class="form-control" placeholder="Search your task here..." aris-label="Search task" aria-describedby="addon-wrapping"/>
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fas fa-search"></i>
+                </span>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- cards section -->
+      <section>
+
+      </section>
+    </div>
 
 
     <script type="text/javascript" src="/index.js"></script>
