@@ -17,6 +17,71 @@
 </head>
 <body>
 
+    <div class="add__new__btn__mobile__only">
+      <button type="button" class="btn btn-outline-success d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addNewModal" type="submit">
+        <i class="fa-light fa-plus mr-4"></i>Add new item
+      </button>
+    </div>
+
+    <!-- add new item modal -->
+    <div class="modal fade" id="addNewModal" tabindex="-1" aria-labelledby="addNewModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addNewModalLabel">Add New Ask</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <!-- image -->
+              <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input type="url" class="form-control" id="imageUrl" aria-describedby="imageHelp" placeholder="https://varunsai/image.png">
+                <div id="imageHelp" class="form-text">It is an optional field for you</div>
+              </div>
+              <!-- task title -->
+              <div class="mb-3">
+                <label for="taskTitle" class="form-label">Task Title</label>
+                <input type="text" class="form-control" id="taskTitle" placeholder="Task Title!" required>
+              </div>
+              <!-- task type -->
+              <div class="mb-3">
+                <label for="tags" class="form-label">Task Type</label>
+                <input type="text" class="form-control" id="tags" placeholder="Task Type!" required>
+              </div>
+              <!-- task description -->
+              <div class="mb-3">
+                <label for="taskDescription" class="form-label">Task Desscription</label>
+                <textarea class="form-control" placeholder="Task Description!" id="taskDescription" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- open task modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Task title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body task__modal__body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -30,7 +95,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
             </ul>
-            <button class="btn btn-outline-success d-flex align-items-center gap-2" type="submit">
+            <button type="button" class="btn btn-outline-success d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addNewModal" type="submit">
               <i class="fa-light fa-plus mr-4"></i>Add new item
             </button>
         </div>
@@ -41,7 +106,7 @@
       <section class="mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-              <div class="input-group flex-nowrap shadow-md rounded">
+              <div class="input-group flex-nowrap shadow rounded">
                 <input type="search" class="form-control" placeholder="Search your task here..." aris-label="Search task" aria-describedby="addon-wrapping"/>
                 <span class="input-group-text" id="addon-wrapping">
                   <i class="fas fa-search"></i>
@@ -53,7 +118,10 @@
 
       <!-- cards section -->
       <section>
-
+        <div class="row task__contents mt-3">
+          <h1>Hey we will be getting cards here!</h1>
+          
+        </div>
       </section>
     </div>
 
