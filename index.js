@@ -66,6 +66,7 @@ const htmlModalContent = ({ id, title, type, description, url}) => {
     `
 };
 
+// Converting JSON into string => to store in localStorage
 const updateLocalStorage = () => {
     localStorage.setItem(
         "tasky",
@@ -75,4 +76,37 @@ const updateLocalStorage = () => {
     );
 };
 
-//load initial data
+// Converting String into JSON => to display the content in cards on the screen
+const LoadInitialData = () => {
+    const localStorageCopy = JSON.parse(localStorage.task);
+
+    if(localStorageCopy) state.taskList = localStorageCopy.tasks;
+
+    state.taskList.map((cardDate) => {
+        taskContents.innerAdjacentHTML("beforeend", htmlTaskContent(cardDate));
+    });
+};
+
+
+// Function to handle submit i.e., take iput from html and store in js variables
+const handleSubmit = (event) => {
+    console.log("triggerd");
+    const id = `${Date.now()}`;
+    const input = {
+        url: document.getElementById("imageUrl").value,
+        title: document.getElementById("taskTitle").value,
+        type: document.getElementById("tags").value,
+        description: document.getElementById("taskDescription").value
+    };
+    if(input.title==="" || input.tags==="" || input.description===""){
+        return alert("Please fill all necessary fields");
+    }
+    taskContents.innerAdjacentHTML("beforeend",htmlTaskContent({...input, id}));
+    state.taskList.push({...input, id});
+    updateLocalStorage();
+};
+
+//open the task
+//edit task
+//save edit
+//search function
